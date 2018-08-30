@@ -47,10 +47,6 @@
 		$prevSelections = $_SESSION['prevSelections'];
 		unset ( $_SESSION['prevSelections'] );
 	}
-
-	// Extract previously-selected Month and Year
-	$prevExpenseMonth= $prevSelections['prevExpenseMonth'];
-	$prevExpenseYear= $prevSelections['prevExpenseYear'];
 ?>
 
 <div class="intro">
