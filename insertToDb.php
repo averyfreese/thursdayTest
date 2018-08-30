@@ -30,6 +30,7 @@
 	$startdate= (string) parse_input($_POST['startdate']);
 	$enddate= (string) parse_input($_POST['enddate']);
 	$employee= (string) parse_input($_POST['employee']);
+	echo $make
 
 	// Get the authentication claims stored in the Token Store after user logins using Azure Active Directory
 	$claims= json_decode($_SERVER['MS_CLIENT_PRINCIPAL'])->claims;
@@ -81,5 +82,5 @@
 	$_SESSION['prevSelections'] = $prevSelections;
 
 	/* Redirect browser to home page */
-	header("Location: /"); 
+	#header("Location: /"); 
 ?>
