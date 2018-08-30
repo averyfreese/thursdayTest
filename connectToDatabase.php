@@ -13,8 +13,8 @@ function ConnectToDabase()
 
 	// Connect to Azure SQL Database
 	$conn = sqlsrv_connect($serverName, $connectionOptions);
-if (!$conn) {
-   die("Connection failed: " . $conn->connect_error);
+	if (!$conn) {
+   die("Connection failed: " . mysqli_connect_error());
 }
   echo "Connected successfully";
 
