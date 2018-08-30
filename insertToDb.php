@@ -12,7 +12,7 @@
 	// Define function to check that inputted expense number has a maximum of 2 decimal pl
  
 	// PHP script used to connect to backend Azure SQL database
-	require 'ConnectToDatabase.php';
+	require 'connectToDatabase.php';
 
 	// Start session for this particular PHP script execution.
 	session_start();
@@ -23,21 +23,12 @@
 	// Get input variables
 	$make= (string) parse_input($_POST['make']);
 	$model= (string) parse_input($_POST['model']);
-	$startdate= (string) parse_input($_POST['startdate']);
-	$enddate= (string) parse_input($_POST['enddate']);
+	$startdate= $_POST['startdate'];
+	$enddate= $_POST['enddate'];
 	$employee= (string) parse_input($_POST['employee']);
 	echo $make
 
-	// Get the authentication claims stored in the Token Store after user logins using Azure Active Directory
-	$claims= json_decode($_SERVER['MS_CLIENT_PRINCIPAL'])->claims;
-	foreach($claims as $claim)
-	{		
-		if ( $claim->typ == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress" )
-		{
-			$userEmail= $claim->val;
-			break;
-		}
-	}
+	
 
 	///////////////////////////////////////////////////////
 	//////////////////// INPUT VALIDATION /////////////////
