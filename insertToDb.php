@@ -9,11 +9,7 @@
 		return $data;
 	}
 
-	// Define function to check that inputted expense number has a maximum of 2 decimal places
-	function validateTwoDecimals($number)
-	{
-	   return (preg_match('/^[0-9]+(\.[0-9]{1,2})?$/', $number));
-	}
+	// Define function to check that inputted expense number has a maximum of 2 decimal pl
  
 	// PHP script used to connect to backend Azure SQL database
 	require 'ConnectToDatabase.php';
