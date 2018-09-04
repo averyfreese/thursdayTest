@@ -41,7 +41,7 @@
 
 
 		// Connect to Azure SQL Database
-		$conn = ConnectToDabase();
+		$conn = ConnectToDatabase();
 
 		// Build SQL query to insert new expense data into SQL database
 		$tsql=
