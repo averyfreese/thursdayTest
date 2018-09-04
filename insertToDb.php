@@ -23,8 +23,8 @@
 	// Get input variables
 	$make= (string) parse_input($_POST['make']);
 	$model= (string) parse_input($_POST['model']);
-	$startdate= $_POST['startdate'];
-	$enddate= $_POST['enddate'];
+	$startdate= (string) parse_input($_POST['startdate']);
+	$enddate= (string) parse_input($_POST['enddate']);
 	$employee= (string) parse_input($_POST['employee']);
 	echo $make
 
