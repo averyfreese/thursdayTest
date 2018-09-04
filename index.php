@@ -20,44 +20,6 @@
 
 <body>
 
-<?php
-	
-	require 'connectToDatabase.php';
-
-	// Connect to Azure SQL Database
-	$conn = ConnectToDabase();
-
-	// Get data for expense categories
-	$tsql="SELECT CATEGORY FROM Expense_Categories ORDER BY CATEGORY ASC";
-	$expenseCategories= sqlsrv_query($conn, $tsql);
-
-	// Populate dropdown menu options 
-	$options = '';
-	while($row = sqlsrv_fetch_array($expenseCategories)) {
-		$options .="<option>" . $row['CATEGORY'] . "</option>";
-	}
-
-	// Close SQL database connection
-	sqlsrv_close ($conn);
-
-	// Get the session data from the previously selected Expense Month, if it exists
-	session_start();
-	if ( !empty( $_SESSION['prevSelections'] ))
-	{ 
-		$prevSelections = $_SESSION['prevSelections'];
-		unset ( $_SESSION['prevSelections'] );
-	}
-?>
-
-<div class="intro">
-
-	<h2> Vehicle Registration Form </h2>
-
-	<!-- Display redundant error message on top of webpage if there is an error -->
-	<h3> <span class="error"> <?php echo $prevSelections['errorMessage'] ?> </span> </h3>
-
-</div>
-
 <!-- Define web form. 
 The array $_POST is populated after the HTTP POST method.
 The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
